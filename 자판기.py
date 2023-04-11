@@ -7,7 +7,7 @@ price = 0
 money = 0
 window = Tk()
 window.title("자판기")
-window.geometry('700x1000')
+window.geometry('700x500')
 
 #im=tkinter.Label(window,image=image)
 #im.pack()
