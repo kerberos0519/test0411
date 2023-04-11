@@ -41,6 +41,12 @@ def p_icechoco():
     global price
     price=150
     process()
+    
+    
+def p_milktea():
+    global price
+    price=300
+    process()
 
 def p_get():
     global money
@@ -75,5 +81,8 @@ bt3 = Button(window,height='2',width='20',text="아이스초코 150원", command
 bt3.place(x=50, y=150)
 bt4 = Button(window, text="확인", command=p_get)
 bt4.grid(row=0, column=3)
+
+bt5 = Button(window,height='2',width='20',text="밀크티 500원", command=p_milktea)
+bt5.place(x=50, y=200)
 
 window.mainloop()
