@@ -83,6 +83,7 @@ la2.grid(row=1, column=0)
 en2 = Entry(window)
 en2.grid(row=1, column=1)
 
+#선민이가 작업했음 4-11 10시55분
 bt1 = Button(window,height='3',width='30',text="아메리카노 1800원", command=p_americano)
 bt1.place(x=50, y=50)
 bt2 = Button(window,height='3',width='30',text="믹스커피 300원", command=p_mix)
