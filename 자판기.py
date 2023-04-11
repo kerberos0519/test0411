@@ -6,14 +6,47 @@ price = 0
 money = 0
 window = Tk()
 window.title("자판기")
-window.geometry('700x500')
+window.geometry('1200x600')
 
 #태홍이가 이미지 첨부가능하게 함
-image = Image.open("D:\\0411 day\\test0411-1\\americano.jpg")
-image = image.resize((180, 180), Image.ANTIALIAS)
-photo = ImageTk.PhotoImage(image)
-label = Label(window, image=photo)
-label.place(x=200, y=300)
+image1 = Image.open("D:\\0411 day\\test0411-1\\americano.jpg")
+image1 = image1.resize((180, 180), Image.ANTIALIAS)
+photo1 = ImageTk.PhotoImage(image1)
+label1 = Label(window, image=photo1)
+label1.place(x=200, y=300)
+
+image2 = Image.open("D:\\0411 day\\test0411-1\\icecho.jpg")
+image2 = image2.resize((180, 180), Image.ANTIALIAS)
+photo2 = ImageTk.PhotoImage(image2)
+label2 = Label(window, image=photo2)
+label2.place(x=200, y=400)
+
+image3 = Image.open("D:\\0411 day\\test0411-1\\mix.jpg")
+image3 = image3.resize((180, 180), Image.ANTIALIAS)
+photo3 = ImageTk.PhotoImage(image3)
+label3 = Label(window, image=photo3)
+label3.place(x=200, y=500)
+
+image4 = Image.open("D:\\0411 day\\test0411-1\\cafe.jpg")
+image4 = image4.resize((180, 180), Image.ANTIALIAS)
+photo4 = ImageTk.PhotoImage(image4)
+label4 = Label(window, image=photo4)
+label4.place(x=300, y=400)
+
+image5 = Image.open("D:\\0411 day\\test0411-1\\icecho.jpg")
+image5 = image5.resize((180, 180), Image.ANTIALIAS)
+photo5 = ImageTk.PhotoImage(image5)
+label5= Label(window, image=photo5)
+label5.place(x=300, y=500)
+
+image6 = Image.open("D:\\0411 day\\test0411-1\\ice tea.jpg")
+image6 = image6.resize((180, 180), Image.ANTIALIAS)
+photo6 = ImageTk.PhotoImage(image6)
+label6 = Label(window, image=photo6)
+label6.place(x=300, y=600)
+
+
+
 
 frame = Frame(window)
 frame.pack(side=RIGHT, padx=10, pady=50)
