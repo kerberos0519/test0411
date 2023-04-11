@@ -32,7 +32,7 @@ def p_americano():
     process()
     
 
-    image = Image.open("D:/dategit/img/americano.png")
+    image = Image.open('americano.png')
     size = (300, 300)
     image.thumbnail(size, Image.ANTIALIAS)
     photo = ImageTk.PhotoImage(image)
@@ -47,7 +47,7 @@ def p_mix():
     process()
     
 
-    image = Image.open("D:/dategit/img/mix2.jpg")
+    image = Image.open('mix2.jpg')
     size = (250, 250)
     image.thumbnail(size, Image.ANTIALIAS)
     photo = ImageTk.PhotoImage(image)
@@ -62,7 +62,7 @@ def p_icechoco():
     process()
     
     
-    image = Image.open("D:/dategit/img/icechoco.png")
+    image = Image.open('icechoco.png')
     size = (300, 300)
     image.thumbnail(size, Image.ANTIALIAS)
     photo = ImageTk.PhotoImage(image)
@@ -77,7 +77,7 @@ def p_milktea():
     process()
     
   
-    image = Image.open("D:/dategit/img/milktea2.jpg")
+    image = Image.open('milktea2.jpg')
     size = (250, 250)
     image.thumbnail(size, Image.ANTIALIAS)
     photo = ImageTk.PhotoImage(image)
