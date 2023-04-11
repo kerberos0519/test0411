@@ -1,6 +1,7 @@
 
 from tkinter import *
 import tkinter
+from PIL import Image, ImageTk
 
 
 price = 0
@@ -9,8 +10,6 @@ window = Tk()
 window.title("자판기")
 window.geometry('500x300+200+200')
 
-#im=tkinter.Label(window,image=image)
-#im.pack()
 
 def process():
     global money
@@ -31,11 +30,31 @@ def p_americano():
     global price
     price=200
     process()
+    
+
+    image = Image.open("D:/dategit/img/americano.png")
+    size = (300, 300)
+    image.thumbnail(size, Image.ANTIALIAS)
+    photo = ImageTk.PhotoImage(image)
+    label = tkinter.Label(window, image=photo)
+    label.image = photo
+    label.place(x=200, y=50)
+    
 
 def p_mix():
     global price
     price=100
     process()
+    
+
+    image = Image.open("D:/dategit/img/mix2.jpg")
+    size = (250, 250)
+    image.thumbnail(size, Image.ANTIALIAS)
+    photo = ImageTk.PhotoImage(image)
+    label = tkinter.Label(window, image=photo)
+    label.image = photo
+    label.place(x=200, y=50)
+    
 
 def p_icechoco():
     global price
@@ -43,10 +62,29 @@ def p_icechoco():
     process()
     
     
+    image = Image.open("D:/dategit/img/icechoco.png")
+    size = (300, 300)
+    image.thumbnail(size, Image.ANTIALIAS)
+    photo = ImageTk.PhotoImage(image)
+    label = tkinter.Label(window, image=photo)
+    label.image = photo
+    label.place(x=200, y=50)
+    
+    
 def p_milktea():
     global price
     price=300
     process()
+    
+    
+    image = Image.open("D:/dategit/img/milktea2.jpg")
+    size = (250, 250)
+    image.thumbnail(size, Image.ANTIALIAS)
+    photo = ImageTk.PhotoImage(image)
+    label = tkinter.Label(window, image=photo)
+    label.image = photo
+    label.place(x=200, y=50)
+    
 
 def p_get():
     global money
@@ -79,10 +117,12 @@ bt2 = Button(window,height='2',width='20',text="믹스커피 100원", command=p_
 bt2.place(x=50, y=100)
 bt3 = Button(window,height='2',width='20',text="아이스초코 150원", command=p_icechoco)
 bt3.place(x=50, y=150)
-bt4 = Button(window, text="확인", command=p_get)
-bt4.grid(row=0, column=3)
+bt4 = Button(window,height='2',width='20',text="밀크티 500원", command=p_milktea)
+bt4.place(x=50, y=200)
 
-bt5 = Button(window,height='2',width='20',text="밀크티 500원", command=p_milktea)
-bt5.place(x=50, y=200)
+bt5 = Button(window, text="확인", command=p_get)
+bt5.grid(row=0, column=3)
+
+
 
 window.mainloop()
