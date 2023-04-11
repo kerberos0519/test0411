@@ -27,40 +27,75 @@ def process():
         money -= price
         en2.insert(0,str(money))
 
+# 아메리카노 버튼 클릭 시 호출되는 함수
 def p_americano():
     global price
-    price=1800
-    process()
+    if inventory["americano"] > 0:
+        price=1800
+        inventory["americano"] -= 1
+        process()
+        update_inventory_labels()
+    else:
+        en2.insert(0, "품절")
 
+# 믹스커피 버튼 클릭 시 호출되는 함수
 def p_mix():
     global price
-    price=300
-    process()
+    if inventory["mix"] > 0:
+        price=300
+        inventory["mix"] -= 1
+        process()
+        update_inventory_labels()
+    else:
+        en2.insert(0, "품절")
 
+# 아이스초코 버튼 클릭 시 호출되는 함수
 def p_icechoco():
     global price
-    price=2800
-    process()
+    if inventory["icechoco"] > 0:
+        price=2800
+        inventory["icechoco"] -= 1
+        process()
+        update_inventory_labels()
+    else:
+        en2.insert(0, "품절")
 
-def p_lemonade():
-    global price
-    price=2300
-    process()
-
-def p_latte():
-    global price
-    price=2500
-    process()
-
+# 에스프레소 버튼 클릭 시 호출되는 함수
 def p_espresso():
     global price
-    price=3800
-    process()
+    if inventory["espresso"] > 0:
+        price=3800
+        inventory["espresso"] -= 1
+        process()
+        update_inventory_labels()
+    else:
+        en2.insert(0, "품절")
+
+# 카페라떼 버튼 클릭 시 호출되는 함수
+def p_latte():
+    global price
+    if inventory["latte"] > 0:
+        price=2500
+        inventory["latte"] -= 1
+        process()
+        update_inventory_labels()
+    else:
+        en2.insert(0, "품절")
+
+# 아이스티 버튼 클릭 시 호출되는 함수
+def p_lemonade():
+    global price
+    if inventory["lemonade"] > 0:
+        price=2300
+        inventory["lemonade"] -= 1
+        process()
+        update_inventory_labels()
+    else:
+        en2.insert(0, "품절")
 
 def p_get():
     global money
-    remoney = int(en1.get())
-    
+    remoney = int(en1.get())   
   
     if money>0 :
         money += remoney
@@ -98,5 +133,53 @@ bt6 = Button(window, height='3', width='30', text="아이스티 2300원", comman
 bt6.place(x=300, y=250)
 bt6 = Button(window, text="확인", command=p_get)
 bt6.grid(row=0, column=3)
+
+# 음료수 수량 정보를 저장하는 딕셔너리
+inventory = {"americano": 10, "mix": 10, "icechoco": 10, "latte": 10, "espresso": 10, "lemonade": 10}
+
+# 아메리카노 버튼 클릭 시 호출되는 함수
+def p_americano():
+    global price
+    if inventory["americano"] > 0:
+        price=1800
+        inventory["americano"] -= 1
+        process()
+        update_inventory_labels()
+    else:
+        en2.insert(0, "품절")
+        
+
+# 레이블 업데이트 함수
+def update_inventory_labels():
+    la3.config(text="아메리카노: " + str(inventory["americano"]))
+    la4.config(text="믹스커피: " + str(inventory["mix"]))
+    la5.config(text="아이스초코: " + str(inventory["icechoco"]))
+    la6.config(text="카페라떼: " + str(inventory["latte"]))
+    la7.config(text="에스프레소: " + str(inventory["espresso"]))
+    la8.config(text="아이스티: " + str(inventory["lemonade"]))
+
+# 아메리카노 수량 레이블
+la3 = Label(window, text="아메리카노: " + str(inventory["americano"]))
+la3.place(x=600, y=50)
+
+# 믹스커피 수량 레이블
+la4 = Label(window, text="믹스커피: " + str(inventory["mix"]))
+la4.place(x=600, y=100)
+
+# 아이스초코 수량 레이블
+la5 = Label(window, text="아이스초코: " + str(inventory["icechoco"]))
+la5.place(x=600, y=150)
+
+# 에스프레소 수량 레이블
+la6 = Label(window, text="에스프레소: " + str(inventory["espresso"]))
+la6.place(x=600, y=200)
+
+# 카페라떼 수량 레이블
+la7 = Label(window, text="카페라떼: " + str(inventory["latte"]))
+la7.place(x=600, y=250)
+
+# 아이스티 수량 레이블
+la8 = Label(window, text="아이스티: " + str(inventory["lemonade"]))
+la8.place(x=600, y=300)
 
 window.mainloop()
