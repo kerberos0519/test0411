@@ -1,6 +1,5 @@
-
 from tkinter import *
-import tkinter
+from PIL import Image, ImageTk
 
 
 price = 0
@@ -8,6 +7,16 @@ money = 0
 window = Tk()
 window.title("자판기")
 window.geometry('700x500')
+
+#태홍이가 이미지 첨부가능하게 함
+image = Image.open("D:\\0411 day\\test0411-1\\americano.jpg")
+image = image.resize((180, 180), Image.ANTIALIAS)
+photo = ImageTk.PhotoImage(image)
+label = Label(window, image=photo)
+label.place(x=200, y=300)
+
+frame = Frame(window)
+frame.pack(side=RIGHT, padx=10, pady=50)
 
 #im=tkinter.Label(window,image=image)
 #im.pack()
@@ -109,14 +118,14 @@ def p_get():
         en,insert(0,str("커피를 선택하세요."))
 
 la1 = Label(window,text="투입금액")
-la1.grid(row=0, column=0)
+la1.pack(side="bottom", padx=8, pady=8)
 en1 = Entry(window)
-en1.grid(row=0, column=1)
+en1.pack(side="bottom", padx=8, pady=8)
 
 la2 = Label(window,text="거스름돈")
-la2.grid(row=1, column=0)
+la2.pack(side="bottom", padx=5, pady=5)
 en2 = Entry(window)
-en2.grid(row=1, column=1)
+en2.pack(side="bottom", padx=5, pady=5)
 
 #선민이가 작업했음 4-11 10시55분
 bt1 = Button(window,height='3',width='30',text="아메리카노 1800원", command=p_americano)
@@ -132,7 +141,7 @@ bt5.place(x=300, y=150)
 bt6 = Button(window, height='3', width='30', text="아이스티 2300원", command=p_lemonade)
 bt6.place(x=300, y=250)
 bt6 = Button(window, text="확인", command=p_get)
-bt6.grid(row=0, column=3)
+bt6.place(x=300, y=250)
 
 # 음료수 수량 정보를 저장하는 딕셔너리
 inventory = {"americano": 10, "mix": 10, "icechoco": 10, "latte": 10, "espresso": 10, "lemonade": 10}
