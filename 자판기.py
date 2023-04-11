@@ -76,7 +76,7 @@ def p_milktea():
     price=300
     process()
     
-    
+  
     image = Image.open("D:/dategit/img/milktea2.jpg")
     size = (250, 250)
     image.thumbnail(size, Image.ANTIALIAS)
