@@ -6,44 +6,44 @@ price = 0
 money = 0
 window = Tk()
 window.title("자판기")
-window.geometry('1200x600')
+window.geometry('1100x600')
 
 #태홍이가 이미지 첨부가능하게 함
-image1 = Image.open("D:\\0411 day\\test0411-1\\americano.jpg")
-image1 = image1.resize((180, 180), Image.ANTIALIAS)
+image1 = Image.open("C:\\Users\\user\\Desktop\\gitcafe\\americano.jpg")
+image1 = image1.resize((230, 200), Image.ANTIALIAS)
 photo1 = ImageTk.PhotoImage(image1)
 label1 = Label(window, image=photo1)
-label1.place(x=200, y=300)
+label1.place(x=35, y=40)
 
-image2 = Image.open("D:\\0411 day\\test0411-1\\icecho.jpg")
-image2 = image2.resize((180, 180), Image.ANTIALIAS)
+image2 = Image.open("C:\\Users\\user\\Desktop\\gitcafe\\mix.jpg")
+image2 = image2.resize((230, 200), Image.ANTIALIAS)
 photo2 = ImageTk.PhotoImage(image2)
 label2 = Label(window, image=photo2)
-label2.place(x=200, y=400)
+label2.place(x=320, y=40)
 
-image3 = Image.open("D:\\0411 day\\test0411-1\\mix.jpg")
-image3 = image3.resize((180, 180), Image.ANTIALIAS)
+image3 = Image.open("C:\\Users\\user\\Desktop\\gitcafe\\icecho.jpg")
+image3 = image3.resize((230, 200), Image.ANTIALIAS)
 photo3 = ImageTk.PhotoImage(image3)
 label3 = Label(window, image=photo3)
-label3.place(x=200, y=500)
+label3.place(x=605, y=40)
 
-image4 = Image.open("D:\\0411 day\\test0411-1\\cafe.jpg")
-image4 = image4.resize((180, 180), Image.ANTIALIAS)
+image4 = Image.open("C:\\Users\\user\\Desktop\\gitcafe\\ess.jpg")
+image4 = image4.resize((230, 200), Image.ANTIALIAS)
 photo4 = ImageTk.PhotoImage(image4)
 label4 = Label(window, image=photo4)
-label4.place(x=300, y=400)
+label4.place(x=35, y=320)
 
-image5 = Image.open("D:\\0411 day\\test0411-1\\icecho.jpg")
-image5 = image5.resize((180, 180), Image.ANTIALIAS)
+image5 = Image.open("C:\\Users\\user\\Desktop\\gitcafe\\cafe.jpg")
+image5 = image5.resize((230, 200), Image.ANTIALIAS)
 photo5 = ImageTk.PhotoImage(image5)
 label5= Label(window, image=photo5)
-label5.place(x=300, y=500)
+label5.place(x=320, y=320)
 
-image6 = Image.open("D:\\0411 day\\test0411-1\\ice tea.jpg")
-image6 = image6.resize((180, 180), Image.ANTIALIAS)
+image6 = Image.open("C:\\Users\\user\\Desktop\gitcafe\\ice tea.jpg")
+image6 = image6.resize((230, 200), Image.ANTIALIAS)
 photo6 = ImageTk.PhotoImage(image6)
 label6 = Label(window, image=photo6)
-label6.place(x=300, y=600)
+label6.place(x=605, y=320)
 
 
 
@@ -151,30 +151,30 @@ def p_get():
         en,insert(0,str("커피를 선택하세요."))
 
 la1 = Label(window,text="투입금액")
-la1.pack(side="bottom", padx=8, pady=8)
+la1.place(x=900, y=450)
 en1 = Entry(window)
-en1.pack(side="bottom", padx=8, pady=8)
+en1.place(x=900, y=470)
 
 la2 = Label(window,text="거스름돈")
-la2.pack(side="bottom", padx=5, pady=5)
+la2.place(x=900, y=490)
 en2 = Entry(window)
-en2.pack(side="bottom", padx=5, pady=5)
+en2.place(x=900, y=510)
 
 #선민이가 작업했음 4-11 10시55분
-bt1 = Button(window,height='3',width='30',text="아메리카노 1800원", command=p_americano)
-bt1.place(x=50, y=50)
-bt2 = Button(window,height='3',width='30',text="믹스커피 300원", command=p_mix)
-bt2.place(x=50, y=150)
-bt3 = Button(window,height='3',width='30',text="아이스초코 2800원", command=p_icechoco)
-bt3.place(x=50, y=250)
-bt4 = Button(window,height='3',width='30',text="에스프레소 3800원", command=p_espresso)
-bt4.place(x=300, y=50)
-bt5 = Button(window, height='3', width='30', text="카페라떼 2500원", command=p_latte)
-bt5.place(x=300, y=150)
-bt6 = Button(window, height='3', width='30', text="아이스티 2300원", command=p_lemonade)
-bt6.place(x=300, y=250)
+bt1 = Button(window,height='3',width='25',text="아메리카노 1800원", command=p_americano)
+bt1.place(x=60, y=250)
+bt2 = Button(window,height='3',width='25',text="믹스커피 300원", command=p_mix)
+bt2.place(x=345, y=250)
+bt3 = Button(window,height='3',width='25',text="아이스초코 2800원", command=p_icechoco)
+bt3.place(x=630, y=250)
+bt4 = Button(window,height='3',width='25',text="에스프레소 3800원", command=p_espresso)
+bt4.place(x=60, y=530)
+bt5 = Button(window, height='3', width='25', text="카페라떼 2500원", command=p_latte)
+bt5.place(x=345, y=530)
+bt6 = Button(window, height='3', width='25', text="아이스티 2300원", command=p_lemonade)
+bt6.place(x=630, y=530)
 bt6 = Button(window, text="확인", command=p_get)
-bt6.place(x=300, y=250)
+bt6.place(x=900, y=540)
 
 # 음료수 수량 정보를 저장하는 딕셔너리
 inventory = {"americano": 10, "mix": 10, "icechoco": 10, "latte": 10, "espresso": 10, "lemonade": 10}
@@ -202,26 +202,26 @@ def update_inventory_labels():
 
 # 아메리카노 수량 레이블
 la3 = Label(window, text="아메리카노: " + str(inventory["americano"]))
-la3.place(x=600, y=50)
+la3.place(x=900, y=50)
 
 # 믹스커피 수량 레이블
 la4 = Label(window, text="믹스커피: " + str(inventory["mix"]))
-la4.place(x=600, y=100)
+la4.place(x=900, y=100)
 
 # 아이스초코 수량 레이블
 la5 = Label(window, text="아이스초코: " + str(inventory["icechoco"]))
-la5.place(x=600, y=150)
+la5.place(x=900, y=150)
 
 # 에스프레소 수량 레이블
 la6 = Label(window, text="에스프레소: " + str(inventory["espresso"]))
-la6.place(x=600, y=200)
+la6.place(x=900, y=200)
 
 # 카페라떼 수량 레이블
 la7 = Label(window, text="카페라떼: " + str(inventory["latte"]))
-la7.place(x=600, y=250)
+la7.place(x=900, y=250)
 
 # 아이스티 수량 레이블
 la8 = Label(window, text="아이스티: " + str(inventory["lemonade"]))
-la8.place(x=600, y=300)
+la8.place(x=900, y=300)
 
 window.mainloop()
